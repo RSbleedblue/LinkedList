@@ -47,6 +47,28 @@ public class LinkedList {
         }
         size++;
     }
+    public void delete(int pos){
+        if(pos<0 || pos>size()){
+            throw new IndexOutOfBoundsException("Invalid Position");
+        }
+        if(pos==0){
+            int temp = head.data;
+            head = head.next;
+
+        }
+        else{
+            Node current = head;
+            int i =0;
+            while(i<pos-2){
+                current = current.next;
+                i++;
+            }
+            int data = current.data;
+            current.next = current.next.next;
+        }
+        size--;
+
+    }
     public void get(){
         Node current = head;
         while(current!=null){
